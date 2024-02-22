@@ -9,7 +9,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    public function Type(){
+    public function types(){
 
         return $this-> hasMany(Type :: class);
     }
