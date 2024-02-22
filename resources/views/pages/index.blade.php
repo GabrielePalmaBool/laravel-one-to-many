@@ -9,6 +9,7 @@
     <table class="project">
         
         <tr>
+            <th>Id Progetto</th>
             <th>Nome Progetto</th>
             <th>Campo di utilizzo</th>
             <th>Tipo</th>
@@ -19,39 +20,35 @@
 
         @foreach ( $projects as $project)
 
-        <tr>
-            
-    
-            <td>{{$project -> nome}}</td>
-            <td>
-                @foreach ( $project -> types as $type)
+            @foreach ( $project -> types as $type)
 
-                    {{$type -> campo_uso}}
+                <tr>
+                    <td>{{$project -> id}}</td>
+                    
+                    <td>{{$project -> nome}}</td>
 
-                @endforeach
-            </td>
-            <td>
-                @foreach ( $project -> types as $type)
+                    <td>     
+                        {{$type -> campo_uso}}
+                    </td>
 
-                    {{$type -> nome}},
+                    <td>{{$type -> nome}}</td>
 
-                @endforeach
-            </td>
+                    <td>
 
-            <td>
+                    <img src="{{$project -> img_riferimento}}" alt="Girl in a jacket" width="50" height="60">
+                    
+                    </td>
 
-            <img src="{{$project -> img_riferimento}}" alt="Girl in a jacket" width="50" height="60">
-            
-            </td>
-
-            <td>{{$project -> descrizione}}</td>
-            
-            <td>{{$project -> data_pubblicazione}}</td>
+                    <td>{{$project -> descrizione}}</td>
+                    
+                    <td>{{$project -> data_pubblicazione}}</td>
+                
+                </tr>
            
-        </tr>
-           
+            @endforeach
 
         @endforeach
+
     </table>
 
 @endsection
