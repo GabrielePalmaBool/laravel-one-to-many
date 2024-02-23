@@ -21,7 +21,8 @@
         @foreach ( $projects as $project)
 
             @foreach ( $project -> types as $type)
-
+                
+                @if (@isset($type))
                 <tr>
                     <td>{{$project -> id}}</td>
                     
@@ -44,11 +45,38 @@
                     <td>{{$project -> data_pubblicazione}}</td>
                 
                 </tr>
-           
+                    
+                @else
+               
+                <tr>
+                    <td>{{$project -> id}}</td>
+                    
+                    <td>{{$project -> nome}}</td>
+
+                    <td>     
+                        ok
+                    </td>
+
+                    <td>
+                        ok
+                    </td>
+
+                    <td>
+
+                    <img src="{{$project -> img_riferimento}}" alt="Girl in a jacket" width="50" height="60">
+                    
+                    </td>
+
+                    <td>{{$project -> descrizione}}</td>
+                    
+                    <td>{{$project -> data_pubblicazione}}</td>
+                
+                </tr>
+                    
+                @endif
+            
             @endforeach
 
-        @endforeach
-
-    </table>
-
+        @endforeach 
+       
 @endsection
