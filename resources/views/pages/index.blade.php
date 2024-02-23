@@ -18,9 +18,9 @@
             <th>Data Pubblicazione</th>
         </tr>
 
-        @foreach ( $projects as $project)
+        @foreach ( $types as $type)
 
-            @foreach ( $project -> types as $type)
+            @foreach ( $type -> projects as $project)
                 
                 @if (@isset($type))
                 <tr>

@@ -7,8 +7,6 @@ use Illuminate\Database\Seeder;
 
 use App\Models\Type;
 
-use App\Models\Project;
-
 class TypeTableSeeder extends Seeder
 {
     /**
@@ -18,17 +16,6 @@ class TypeTableSeeder extends Seeder
      */
     public function run()
     {
-        //soluzione 1 a molti
-        Type :: factory() ->count(30) -> make() 
-
-            ->each(function($type){
-
-                $project = Project :: inRandomOrder() -> first();
-
-                //La funzione Project() si trova all'interno del model Type
-                $type -> Project() -> associate($project);
-
-                $type -> save();
-        });
+        Type :: factory() ->count(10) -> create();
     }
 }

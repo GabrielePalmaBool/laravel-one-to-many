@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Project;
+use App\Models\Type;
 
 class MainController extends Controller
 {
     public function index(){
 
-        $projects = Project :: all();
+        $types = Type :: all();
 
-        return view('pages.index', compact('projects'));
+        return view('pages.index', compact('types'));
 
     }
 }
